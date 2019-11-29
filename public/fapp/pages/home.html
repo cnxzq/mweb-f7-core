@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <!-- Required meta tags-->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+	    <!-- Color theme for statusbar -->
+	    <meta name="theme-color" content="#2196f3">
+	    <!-- Your app title -->
+        <title>Framework7-DICB Demo</title>
+        
+        <style>
+            .page-home{
+                --fz:1.5rem;
+                --icopadding:0.1rem;
+                --c1:#6073FC;
+                --c2:#B97BFE;
+                --c3:#3DA3F7;
+                --c4:#6C81FD;
+                --c5:#E76873;
+                --c6:#ED9762;
+                --c7:#4FDA8F;
+                --c8:#92E058;
+                --c9:#FEB914;
+                --c10:#FF8C21;
+                --c11:#78C3FC;
+                --c12:#3D94FE;
+            }
+            .page-home .swiper-slide{
+                padding-bottom:2rem;
+            }
+            .home_iconbox i {
+                display: inline-block;
+                width:var(--fz);
+                height:var(--fz);
+                min-height: var(--fz);
+                line-height: var(--fz);
+                font-size:var(--fz) !important;
+                padding: var(--icopadding);
+            }
+            .page-home > div.block{
+                margin-top:1rem;
+                margin-bottom:1rem;
+            }
+        
+            .zblist > div:nth-child(1) .jbs{
+                background-image: linear-gradient(141deg,#6073FC 0%,#B97BFE 100%);
+            }
+            .zblist > div:nth-child(2) .jbs{
+                background-image: linear-gradient(141deg,#3DA3F7 0%,#6C81FD 100%);
+            }
+            .zblist > div:nth-child(3) .jbs{
+                background-image: linear-gradient(141deg,#E76873 0%,#ED9762 100%);
+            }
+            .zblist > div:nth-child(4) .jbs{
+                background-image: linear-gradient(141deg,#4FDA8F 0%,#92E058 100%);
+            }
+            .zblist > div:nth-child(5) .jbs{
+                background-image: linear-gradient(141deg,#FEB914 0%,#FF8C21 100%);
+            }
+            .zblist > div:nth-child(6) .jbs{
+                background-image: linear-gradient(141deg,#78C3FC 0%,#3D94FE 100%);
+            }
+            .zblist > div:nth-last-child(2) .jbs,
+            .zblist > div:nth-last-child(1) .jbs{
+                margin-bottom:0rem;
+            }
+            .zblist .jbs {
+                margin-bottom:1rem;
+                color:#eee;border-radius: 0.5rem;
+                position: relative;
+                box-shadow: 0.2rem 0.2rem 0.3rem #888888;
+            }
+            .zblist .jbs::before{
+                position: absolute;
+                content: "";
+                right:0;
+                width:5rem;
+                height:100%;
+                background-image:url(static/imgs/q.png);
+            }
+                
+            .zblist .icolist> div {
+                text-align:center;
+            }
+            .zblist .icolist> div i{
+                color: #fff;
+                text-align: center;
+                width: 3rem;
+                height: 3rem;
+                background: red;
+                border-radius: 50%;
+                line-height: 3rem;
+                margin-bottom:1rem;
+            }
+            .zblist .icolist > div:nth-last-child(1) i,
+            .zblist .icolist > div:nth-last-child(2) i,
+            .zblist .icolist > div:nth-last-child(3) i,
+            .zblist .icolist > div:nth-last-child(4) i{
+                margin-bottom:2rem;
+            }
+        </style>
+	</head>
+
+	<body controller="home.js" option="{platform:'f7'}" style="display:block;">
+	    <div id="app" style="display:none;">
+	      	<!-- Statusbar overlay -->
+            <div class="statusbar"></div>
+              
+			<!-- Your main view, should have "view-main" class -->
+            <div class="view view-main view-init safe-areas" data-master-detail-breakpoint="800" data-url="/">
+                <div f7-component-root class="page page-home no-navbar" name="home">
+                    <div style="position: relative;">
+                        <div style="display:flex;align-items:center;padding:1rem;position: absolute;">
+                        <img src="static/imgs/logo.svg" style="width:3rem;margin-right:0.5rem;" />
+                        <div style="flex:1;color:#fff;font-size:1rem;">
+                            <div>山东能源淄矿集团亭南煤业</div>
+                            <div style="font-weight:bold;">煤质分析智能化平台</div>
+                        </div>
+                        </div>
+                        <img src="static/imgs/bg.jpg" style="width:100%;" />
+                    </div>
+                    <div class="block" style="margin-top:1rem;margin-bottom:1rem;display: flex;align-items: center;">
+                        <i class="icon material-icons">notifications_none</i>
+                        <span style="color:#000;font-weight:bold;white-space: nowrap;">预警：</span>
+                        <span style="color:#FF8800">预警信息 XXXXX XXXX</span>
+                        <!--scrollmsg @change="yjcolor=['#000','green','#FF8800','red'][$event.dengji]" 
+                            :items="msg" :style="{color:yjcolor}"></scrollmsg-->
+                    </div>
+                    <div class="block">
+                        <div class="block-title">关键指标</div>
+                        <div data-effect="flip" data-pagination='{
+                                "el": "#swiper2.swiper-pagination", 
+                                "hideOnClick": true
+                            }' data-loop="true" data-slides-per-view= "1" data-autoplay="true" class="swiper-container swiper-init">
+                            <div id="swiper2" class="swiper-pagination"></div>
+                            <div class="swiper-wrapper">
+                                {{#each zblist}}
+                                <div class="swiper-slide">
+                                    <div class="zblist row" style="padding: 0.5rem;">
+                                        {{#each this}}
+                                        <div class="col-50">
+                                            <div class="jbs row">
+                                                <div class="col-60" style="padding: 0.5rem;">
+                                                    <div style="color: rgb(255, 255, 255); font-weight: bold; font-size: 1rem;">{{title}}</div>
+                                                    <div style="text-align: right; color: rgb(255, 255, 255); font-weight: bold; font-size: 1.5rem;">{{value}}</div>
+                                                </div>
+                                                <div class="col-40" style="padding: 0rem; align-self: center;">{{zb}}<br/>{{unit}}</div>
+                                            </div>
+                                        </div>
+                                        {{/each}}
+                                    </div>
+                                </div>
+                                {{/each}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+	    </div>
+	</body>
+	<script src="/com.kysoft.service/resource/core/js/com.kjsoft.core.starter.js"></script>
+</html>

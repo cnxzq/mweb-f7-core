@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <!-- Required meta tags-->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+	    <!-- Color theme for statusbar -->
+	    <meta name="theme-color" content="#2196f3">
+	    <!-- Your app title -->
+	    <title>Framework7-DICB Demo</title>
+	</head>
+	<body controller="demo.js" option="{platform:null}" style="display:block;">
+		<!-- 这里 使用 display:none 并定义 showPage 方法，在页面加载完毕后调用 -->
+		<script>
+		window.showPage = function(){
+			var c = document.getElementById("app").style;
+			c.opacity = "0";c.display = "block";c.transition = "opacity 0.5s";
+			setTimeout(function(){c.opacity = "1";})
+		}
+		</script>
+	    <div id="app" style="display:none;">
+	      <!-- Statusbar overlay -->
+	      <div class="statusbar"></div>
+	      <!-- Your main view, should have "view-main" class -->
+	      <div class="view view-main">
+	        <!-- Initial Page, "data-name" contains page name -->
+	        <div data-name="home" class="page">
+	
+	          <!-- Top Navbar -->
+	          <div class="navbar">
+	            <div class="navbar-inner">
+	              <div class="title">Awesome App</div>
+	            </div>
+	          </div>
+	
+	          <!-- Bottom Toolbar -->
+	          <div class="toolbar toolbar-bottom">
+	            <div class="toolbar-inner">
+	              <!-- Toolbar links -->
+	              <a href="#" class="link">Link 1</a>
+	              <a href="#" class="link">Link 2</a>
+	            </div>
+	          </div>
+	
+	          <!-- Scrollable page content -->
+	          <div class="page-content">
+	            <p>Page content goes here</p>
+	            <!-- Link to another page -->
+	            <a href="/about/">About app</a>
+	            <p>Page content goes here</p>
+	            <!-- Link to another page -->
+	            <a href="/tabs/">tabs</a>
+	            <p>Page content goes here</p>
+	            <!-- Link to another page -->
+	            <a href="/somepage/">some-page</a>
+	            <!-- Link to another page -->
+	            <a href="/async/">async</a>
+	            <!-- Link to another page -->
+	            <a href="/template/">template</a>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	</body>
+	<script src="/com.kysoft.service/resource/core/js/com.kjsoft.core.starter.js"></script>
+</html>

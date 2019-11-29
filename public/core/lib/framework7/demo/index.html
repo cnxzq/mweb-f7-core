@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#2196f3">
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+  <title>Framework7</title>
+  <link rel="stylesheet" href="../core/css/framework7.bundle.min.css">
+  <link rel="stylesheet" href="../fonts/icons.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="apple-touch-icon" href="img/f7-icon-square.png">
+  <link rel="icon" href="img/favicon.png">
+</head>
+<body>
+  <div id="app">
+    <div class="panel panel-left panel-cover panel-resizable panel-init">
+      <div class="page">
+        <div class="page-content">
+          <div class="block-title">Left Panel</div>
+          <div class="block">
+            <p>This is a left side panel. You can close it by clicking outsite or on this link: <a href="#" class="panel-close">close me</a>. You can put here anything, even another isolated view like in <a href="#" data-panel="right" class="panel-open">Right Panel</a></p>
+          </div>
+          <div class="block-title">Main View Navigation</div>
+          <div class="list links-list">
+            <ul>
+              <li>
+                <a href="/accordion/" class="panel-close">Accordion</a>
+              </li>
+              <li>
+                <a href="/action-sheet/" class="panel-close">Action Sheet</a>
+              </li>
+              <li>
+                <a href="/badge/" class="panel-close">Badge</a>
+              </li>
+              <li>
+                <a href="/buttons/" class="panel-close">Buttons</a>
+              </li>
+              <li>
+                <a href="/cards/" class="panel-close">Cards</a>
+              </li>
+              <li>
+                <a href="/checkbox/" class="panel-close">Checkbox</a>
+              </li>
+              <li>
+                <a href="/chips/" class="panel-close">Chips/Tags</a>
+              </li>
+              <li>
+                <a href="/contacts-list/" class="panel-close">Contacts List</a>
+              </li>
+              <li>
+                <a href="/data-table/" class="panel-close">Data Table</a>
+              </li>
+            </ul>
+          </div>
+          <div class="block">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse faucibus mauris leo, eu bibendum neque congue non. Ut leo mauris, eleifend eu commodo a, egestas ac urna. Maecenas in lacus faucibus, viverra ipsum pulvinar, molestie arcu. Etiam lacinia venenatis dignissim. Suspendisse non nisl semper tellus malesuada suscipit eu et eros. Nulla eu enim quis quam elementum vulputate. Mauris ornare consequat nunc viverra pellentesque. Aenean semper eu massa sit amet aliquam. Integer et neque sed libero mollis elementum at vitae ligula. Vestibulum pharetra sed libero sed porttitor. Suspendisse a faucibus lectus.</p>
+            <p>Duis ut mauris sollicitudin, venenatis nisi sed, luctus ligula. Phasellus blandit nisl ut lorem semper pharetra. Nullam tortor nibh, suscipit in consequat vel, feugiat sed quam. Nam risus libero, auctor vel tristique ac, malesuada ut ante. Sed molestie, est in eleifend sagittis, leo tortor ullamcorper erat, at vulputate eros sapien nec libero. Mauris dapibus laoreet nibh quis bibendum. Fusce dolor sem, suscipit in iaculis id, pharetra at urna. Pellentesque tempor congue massa quis faucibus. Vestibulum nunc eros, convallis blandit dui sit amet, gravida adipiscing libero.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-right panel-reveal panel-resizable panel-init">
+      <div class="view view-init view-right" data-name="right" data-url="/">
+        <div class="page">
+          <div class="navbar">
+            <div class="navbar-bg"></div>
+            <div class="navbar-inner sliding">
+              <div class="title">Right Panel</div>
+            </div>
+          </div>
+          <div class="page-content">
+            <div class="block">
+              <p>This is a right side panel. You can close it by clicking outsite or on this link: <a href="#" class="panel-close">close me</a>. You can put here anything, even another isolated view.</p>
+            </div>
+            <div class="block-title">Panel Navigation</div>
+            <div class="list links-list">
+              <ul>
+                <li><a href="/panel-right-1/">Right panel page 1</a></li>
+                <li><a href="/panel-right-2/">Right panel page 2</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="view view-main view-init safe-areas" data-master-detail-breakpoint="800" data-url="/">
+      <div class="page page-home">
+        <div class="navbar navbar-large-transparent">
+          <div class="navbar-bg"></div>
+          <div class="navbar-inner">
+            <div class="left">
+              <a href="#" class="link icon-only panel-open" data-panel="left">
+                <i class="icon f7-icons if-not-md">menu</i>
+                <i class="icon material-icons md-only">menu</i>
+              </a>
+            </div>
+            <div class="title sliding">Framework7</div>
+            <div class="right">
+              <a class="link icon-only searchbar-enable" data-searchbar=".searchbar-components">
+                <i class="icon f7-icons if-not-md">search</i>
+                <i class="icon material-icons md-only">search</i>
+              </a>
+            </div>
+            <div class="title-large">
+              <div class="title-large-text">Framework7</div>
+            </div>
+            <form data-search-container=".components-list" data-search-in="a" class="searchbar searchbar-expandable searchbar-components searchbar-init">
+              <div class="searchbar-inner">
+                <div class="searchbar-input-wrap">
+                  <input type="search" placeholder="Search components"/>
+                  <i class="searchbar-icon"></i>
+                  <span class="input-clear-button"></span>
+                </div>
+                <span class="searchbar-disable-button if-not-aurora">Cancel</span>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="page-content">
+          <div class="list searchbar-hide-on-search">
+            <ul>
+              <li>
+                <a class="item-content item-link" href="/about/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">关于 Framework7 {{a}}</div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="block-title block-title-medium searchbar-found">组件 / Components</div>
+          <div class="list components-list searchbar-found">
+            <ul>
+              <li>
+                <a class="item-content item-link" href="/accordion/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">手风琴 / Accordion</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/action-sheet/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">弹出选择页 / Action Sheet</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/appbar/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">应用栏 / Appbar</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/autocomplete/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">自动补全 / Autocomplete</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/badge/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">角标 / Badge</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/buttons/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">按钮 / Buttons</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/calendar/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">日期选择器 / Calendar / Date Picker</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/cards/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">卡片 / Cards</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/cards-expandable/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">扩展卡片 / Cards Expandable</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/checkbox/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">复选框 / Checkbox</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/chips/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">标签 / Chips / Tags</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/color-picker/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">颜色选择器 / Color Picker</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/contacts-list/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">联系人列表 / Contacts List</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/content-block/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">内容块 / Content Block</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/data-table/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">数据表格 / Data Table</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/dialog/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">弹出页 / Dialog</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/elevation/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">漂浮效果 / Elevation</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/fab/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">浮动特效按钮 / FAB</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/fab-morph/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">浮动特效按钮变形 / FAB Morph</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/form-storage/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">表单存储 / Form Storage</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/gauge/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">仪表盘 / Gauge</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/grid/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">网格 / Grid / Layout Grid</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/icons/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">图标 / Icons</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/infinite-scroll/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">无限滚动 / Infinite Scroll</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/inputs/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">输入控件演示 / Inputs</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/lazy-load/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">懒加载 / Lazy Load</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/list/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">列表视图 / List View</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/list-index/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">索引列表 / List Index</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/login-screen/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">登陆页 / Login Screen</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                  <a class="item-content item-link" href="/menu/">
+                    <div class="item-media"><i class="icon icon-f7"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title">菜单 / Menu</div>
+                    </div>
+                  </a>
+                </li>
+              <li>
+                <a class="item-content item-link" href="/messages/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">信息对话框 / Messages</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/navbar/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">导航栏 / Navbar</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/notifications/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">通知 / Notifications</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/panel/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">面板/侧边栏 /  Panel / Side Panels</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/photo-browser/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">图片浏览器 / Photo Browser</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/picker/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">选择器 / Picker</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/popover/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">浮动菜单 / Popover</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/popup/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">浮动层 / Popup</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/preloader/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">加载中 / Preloader</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/progressbar/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">进度条 / Progress Bar</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/pull-to-refresh/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">下拉刷新 / Pull To Refresh</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/radio/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">单选框 / Radio</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/range/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">滑块选择 / Range Slider</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/searchbar/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">搜索栏 / Searchbar</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/searchbar-expandable/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">扩展搜索栏 / Searchbar Expandable</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/sheet-modal/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">模态页? / Sheet Modal</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/skeleton/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">占位布局 / Skeleton (Ghost) Layouts</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/smart-select/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">弹出页选择器 / Smart Select</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/sortable/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">排序列表 / Sortable List</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/stepper/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">步进器 / Stepper</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/subnavbar/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">子导航栏 / Subnavbar</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/swipeout/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">滑动删除 / Swipeout (Swipe To Delete)</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/swiper/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">滑动切换页/轮播 Swiper Slider</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/tabs/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">页签 / Tabs</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/text-editor/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">文本编辑器 / Text Editor</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/timeline/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">时间线 / Timeline</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/toast/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">弱提示 / Toast</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/toggle/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">开关/切换 Toggle</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/toolbar-tabbar/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">工具栏/页签栏 Toolbar & Tabbar</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/tooltip/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">提示框 / Tooltip</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/treeview/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">树视图 / Treeview</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/virtual-list/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">虚拟列表 / Virtual List</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="item-content item-link" href="/vi/">
+                  <div class="item-media"><i class="icon icon-vi"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">移动视频广告 / vi - Mobile Video SSP</div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="list simple-list searchbar-not-found">
+            <ul>
+              <li>Nothing found</li>
+            </ul>
+          </div>
+          <div class="block-title block-title-medium searchbar-hide-on-search">主题 / Themes</div>
+          <div class="list links-list searchbar-hide-on-search">
+            <ul>
+              <li>
+                <a href="./index.html?theme=ios" class="external">苹果主题 / iOS Theme</a>
+              </li>
+              <li>
+                <a href="./index.html?theme=md" class="external">Material风格(无边框) / Material (MD) Theme</a>
+              </li>
+              <li>
+                <a href="./index.html?theme=aurora" class="external">极光桌面/PC风格 / Aurora Desktop Theme</a>
+              </li>
+              <li>
+                <a href="/color-themes/">彩色主题 / Color Themes</a>
+              </li>
+            </ul>
+          </div>
+          <div class="block-title block-title-medium searchbar-hide-on-search">页面加载器/路由 / Page Loaders & Router</div>
+          <div class="list links-list searchbar-hide-on-search">
+            <ul>
+              <li>
+                <a href="/page-transitions/">页面切换特效 / Page Transitions</a>
+              </li>
+              <li>
+                <a href="/page-loader-template7/vladimir/123/about-me/1/?start=0&end=30#top">Template7页面 / Template7 Page</a>
+              </li>
+              <li>
+                <a href="/page-loader-component/vladimir/123/about-me/1/?start=0&end=30#top">Component页面 / Component Page</a>
+              </li>
+              <li>
+                <a href="/load-something-that-doesnt-exist/">默认路由(404) / Default Route (404)</a>
+              </li>
+              <li>
+                <a href="/master-detail/">主从页面(兼容平板/手机)/ Master-Detail (Split View)</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="../core/js/framework7.bundle.min.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

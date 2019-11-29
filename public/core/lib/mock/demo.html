@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="mock.js"></script>
+	</head>
+	<body>
+		<button onclick="gen()">Gen</button><br/>
+		<textarea id="code" style="width:600px;height:400px"></textarea>
+		<textarea id="data" style="width:600px;height:400px"></textarea>
+		<script>
+			var inp_code = document.getElementById("code");
+			var inp_data = document.getElementById("data");
+			inp_code.value = JSON.stringify({
+			    // 属性 list 的值是一个数组，其中含有 1 到 10 个元素
+			    'list|1-10': [{
+			        // 属性 id 是一个自增数，起始值为 1，每次增 1
+			        'id|+1': 1
+			    }]
+			}, null, 4);
+			
+			var gen = function(){
+				// 使用 Mock
+				var data = Mock.mock(JSON.parse(inp_code.value));
+				inp_data.value = JSON.stringify(data, null, 4);
+			}
+		</script>
+	</body>
+</html>

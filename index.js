@@ -17,6 +17,6 @@ app.use(config.root||"/",express.static("public"));
 app.use(APIProxy);
 
 app.listen(port,function(){
-    console.log("[server] 服务已启动 "+port)
+    console.log("[server] listening "+port)
     open('http://127.0.0.1:'+port,{app: ['chrome', '--incognito']});
 });

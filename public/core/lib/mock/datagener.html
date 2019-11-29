@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="mock.js"></script>
+		<link href="../monaco-editor/min/vs/editor/editor.main.css" type="text/css" rel="stylesheet" />
+		<style>
+			html,body{height:100%;margin:0;padding:0;}
+		</style>
+	</head>
+	<body>
+		<div style="display: flex;flex-direction: column;height: 100%;overflow:hidden;">
+			<div style="flex-grow: 0;flex-shrink: 0;padding:10px;">
+				<button>生成数据</button>
+			</div>
+			<div style="flex-grow: 1;flex-shrink: 1;display: flex;flex-direction: row;overflow:hidden;">
+				<div style="flex-grow: 0;flex-shrink: 0;width:50%;overflow:hidden;" id="code"></div>
+				<div style="flex-grow: 1;flex-shrink: 1;overflow:hidden;" id="data"></div>
+			</div>
+		</div>
+		<script src="../jquery/jquery-1.12.4.min.js"></script>
+		<script>var require = { paths: { 'vs': '../monaco-editor/min/vs/' } };</script>
+		<script src="../monaco-editor/min/vs/loader.js"></script>
+		<script src="../monaco-editor/min/vs/editor/editor.main.nls.js"></script>
+		<script src="../monaco-editor/min/vs/editor/editor.main.js"></script>
+		<script>
+		/**/
+		Mock.mock('http://test/mock.com','post',function(options){
+		    console.log(options);
+		    return Mock.mock({"mocktest|4-6":[
+		        {
+		            'name': '@cname',  // 中文名称
+		            'id|+1': 88,    // 属性值自动加 1，初始值为88
+		            'age|18-28': 0,   // 18至28以内随机整数, 0只是用来确定类型
+		            'birthday': '@date("yyyy-MM-dd")',  // 日期
+		            'city': '@city(true)',   // 中国城市
+		            'color': '@color',  // 16进制颜色
+		            'isMale|1': true,  // 布尔值
+		            'isFat|1-2': true,  // true的概率是1/3
+		            'brother|1': ['jack', 'jim'], // 随机选取 1 个元素
+		            'sister|+1': ['jack', 'jim', 'lily'], // array中顺序选取元素作为结果
+		            'friends|2': ['jack', 'jim'] // 重复2次属性值生成一个新数组
+		        }
+		    ]});
+		});
+		$.ajax("http://test/mock.com",{
+			type:"post",
+			dataType:"json",
+			data:{ name: "John", time: "2pm" },
+			success:function(data){
+				alert("Data Loaded: " + JSON.stringify(data));
+			}
+		})
+
+		
+		
+			$(document).ready(function() {
+				require(['vs/editor/editor.main'], function () {
+					var inp_code = document.getElementById("code");
+					var inp_data = document.getElementById("data");
+					var option = {
+						model: null,
+						//trueselectOnLineNumbers:true,
+						//roundedSelection: false,
+						readOnly: false,        // 只读
+						//cursorStyle: 'line',        //光标样式
+						automaticLayout: true, //自动布局
+						glyphMargin: true,  //字形边缘
+						useTabStops: false,
+						fontSize: 12,       //字体大小
+						autoIndent:true,//自动布局
+						//quickSuggestionsDelay: 500,   //代码提示延时
+						theme: "vs-dark"//'vs-dark' 'vs' 'hc-black'
+					}
+					var defaultCode = `
+{
+    "nested": {
+        "a": {
+            "b": {
+                "c": "树形末级结点"
+            }
+        }
+    },
+	// 属性 list 的值是一个数组，其中含有 1 到 10 个元素
+    "list|1-10": [
+        {
+            "id|+1": 1,
+            "age|1-100": 100,
+            "gender|1":["男","女"],
+            "city|1":[
+                "上海","北京","深圳"
+            ],
+            "address":function(){
+                return this.city + "xxx路"
+            },
+            'gid': /([a-z]|[A-Z]|[0-9]){16}/,
+            "absolutePath": "@city @gender @/nested/a/b/c"
+        }
+    ]
+}`;
+					var editor_code = monaco.editor.create(inp_code,option);
+					var editor_code_model = monaco.editor.createModel(defaultCode,"javascript");
+					editor_code.setModel(editor_code_model);
+					var editor_data = monaco.editor.create(inp_data,option);
+					var editor_data_model = monaco.editor.createModel("","json")
+					editor_data.setModel(editor_data_model);
+					
+					$("button").click(function(){
+						var data = Mock.mock(eval("("+editor_code_model.getValue()+")"));
+						editor_data_model.setValue(JSON.stringify(data, null, 4));
+					})
+				});
+	
+				window.onresize = function () {
+					editor_code.layout();
+					editor_data.layout();
+				};
+			});
+		</script>
+	</body>
+</html>
