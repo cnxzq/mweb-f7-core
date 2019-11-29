@@ -1,0 +1,24 @@
+{
+  "name": "mweb-f7-core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zq1988626/mweb-f7-core.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zq1988626/mweb-f7-core/issues"
+  },
+  "homepage": "https://github.com/zq1988626/mweb-f7-core#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^0.20.0",
+    "open": "^7.0.0"
+  }
+}
