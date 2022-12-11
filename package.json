@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/zq1988626/mweb-f7-core#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "http-proxy-middleware": "^0.20.0",
     "open": "^7.0.0"
   }
